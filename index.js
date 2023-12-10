@@ -87,21 +87,61 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-let totalCash = 0;
+var totalMonths = finances.length
+var totalProfit = 0;
 
-for (i = 0; i < finances.length; i++) {
-  totalCash = finances[i][1 + totalCash]
+for (i = 0; i < finances.length; i++) { 
+
+  totalProfit = finances[i][1] + totalProfit
+
 }
 
+var totalChange = 0;
 
+for (i = 0; i < (finances.length - 1); i++) {
 
+  totalChange = (finances[i+1][1] - finances[i][1]) + totalChange
 
+}
 
+var averageChange = totalChange / (totalMonths - 1)
+
+// Greatest Increase in Profits/Losses: 
+
+var maxIncrease = 0; // initialize the variable to store the greatest increase
+var increaseMonth = ''; // initialize the variable to store the date with the greatest increase
+
+for (var i = 1; i < finances.length; i++) {
+  var currentProfit = finances[i][1];
+  var previousProfit = finances[i - 1][1];
+  var increase = currentProfit - previousProfit;
+
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+    increaseMonth = finances[i][0];
+  }
+}
+
+// Greatest Decrease in Profits/Losses: 
+
+var maxDecrease = 0;
+var decreaseMonth = '';
+
+for (var i = 1; i < finances.length; i++) {
+  var currentProfit = finances[i][1];
+  var previousProfit = finances[i - 1][1];
+  var decrease = currentProfit - previousProfit;
+
+  if (decrease < maxDecrease) {
+    maxDecrease = decrease;
+    decreaseMonth = finances[i][0];
+  }
+}
 
 console.log(`Financial Analysis`);
 console.log(`-------------------`)
 console.log(`Total Months: ${finances.length}`);
-console.log(`Total: $${totalCash}`);
-console.log(`Average Change: ${averageChange}`);
-//console.log(`Greatest Increase in Profits/Losses:`);
-//console.log(`Greatest Decrease in Profits/Losses:`)
+console.log(`Total: $${totalProfit}`);
+console.log(`Average Change: ${averageChange.toFixed(2)}`);
+console.log(`Greatest Increase in Profits/Losses: ${increaseMonth} + $${maxIncrease}`);
+console.log(`Greatest Decrease in Profits/Losses: ${decreaseMonth} + $${maxDecrease}`);
