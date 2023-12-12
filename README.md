@@ -37,7 +37,7 @@ Follow these steps to see the console in action:
 + Use developer tools to inspect the page.
 + Open the console to see the calculations.
 
-
+<img width="1440" alt="Snímek obrazovky 2023-12-12 v 11 09 18" src="https://github.com/volfovaklara/console-finances/assets/139559885/0ed52da3-7920-43e0-8300-0a094c6b7290">
 
 ### Credits
 N/A
