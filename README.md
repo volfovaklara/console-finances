@@ -1,9 +1,9 @@
 # Console Finances
 
-
-
 ### Description
 This project presents a real-world situation. I was tasked with creating a JavaScript code for analysing the financial records of a company. I've been provided with a financial dataset.
+
+[Deployed Application](https://volfovaklara.github.io/console-finances/)
 
 ### Table of Contents
 * [User Story](#user-story) 
